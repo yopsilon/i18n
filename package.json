@@ -1,0 +1,32 @@
+{
+  "name": "@yopsilon/i18n",
+  "description": "Simple i18n lib for the Yopsilon components",
+  "author": {
+    "name": "Aleksei Melnikov",
+    "email": "m_alx@list.ru",
+    "url": "http://yopsilon.com/i18n"
+  },
+  "main": "dist/bundles/yopsilon-i18n.umd.js",
+  "module": "./es2015/index.js",
+  "typings": "./es2015/index.d.ts",
+  "es2015": "dist/es2015/yopsilon-i18n.js",
+  "scripts": {
+    "clean": "rimraf dist",
+    "build:umd": "webpack --mode production",
+    "build:es2015": "tsc -m es2015 --outDir dist/es2015",
+    "build": "npm run clean && npm run build:umd && npm run build:es2015 && ncp package.json dist/package.json",
+    "start": "webpack serve --open --mode production",
+    "watch": "webpack --watch",
+    "test": "karma start"
+  },
+  "devDependencies": {
+    "html-webpack-plugin": "^5.5.0",
+    "ncp": "^2.0.0",
+    "source-map-loader": "^4.0.1",
+    "ts-loader": "^9.4.2",
+    "typescript": "^4.9.5",
+    "webpack": "^5.75.0",
+    "webpack-cli": "^5.0.1",
+    "webpack-dev-server": "^4.11.1"
+  }
+}
