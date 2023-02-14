@@ -8,6 +8,11 @@
     "url": "http://yopsilon.com/i18n"
   },
   "license": "MIT",
+  "repository": {
+    "type": "github",
+    "directory": "https://github.com/yopsilon/i18n"
+  },
+  "homepage": "https://github.com/yopsilon/i18n",
   "main": "dist/bundles/yopsilon-i18n.umd.js",
   "module": "./es2015/index.js",
   "types": "./es2015/index.d.ts",
