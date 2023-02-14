@@ -1,12 +1,13 @@
 {
   "name": "@yopsilon/i18n",
-  "version": "0.9.2",
+  "version": "0.9.3",
   "description": "Simple i18n lib for the Yopsilon components",
   "author": {
     "name": "Aleksei Melnikov",
     "email": "m_alx@list.ru",
     "url": "http://yopsilon.com/i18n"
   },
+  "license": "MIT",
   "main": "dist/bundles/yopsilon-i18n.umd.js",
   "module": "./es2015/index.js",
   "types": "./es2015/index.d.ts",
