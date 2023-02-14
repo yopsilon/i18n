@@ -23,5 +23,5 @@ export interface ILocale {
   separators: Array<string>;
   currency: string;
 
-  translates?: { [id: string]: string };
+  translates: { [id: string]: string };
 }

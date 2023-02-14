@@ -28,15 +28,6 @@ module.exports = {
     resolve: {
         extensions: ['.ts', '.js']
     },
-    plugins: [
-        new HtmlWebpackPlugin({
-            title: 'yopsilon-i18n',
-            template: path.resolve(__dirname, './src/index.html'),
-            chunks: ['yopsilon-i18n.umd'],
-            inject: 'head',
-            filename: 'index.html',
-        }),
-    ],
     module: {
         rules: [
             {

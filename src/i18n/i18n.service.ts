@@ -19,6 +19,10 @@ export class I18nService implements II18n {
 
    private _currentLocaleIndex!: number;
 
+   get onLocaleChange() {
+      return this._onLocaleChangeEvent;
+   }
+
    subscribe(handler: { (locale: ILocale): void }): { (locale: ILocale): void } {
       this._onLocaleChangeEvent.subscribe(handler);
       return handler;
@@ -29,10 +33,7 @@ export class I18nService implements II18n {
    }
 
    get locale(): ILocale {
-      if (this._currentLocaleIndex !== undefined) {
-         return this.locales[this._currentLocaleIndex];
-      }
-      return this.locale;
+      return this.locales[this._currentLocaleIndex];
    }
 
    set locale(l: ILocale) {
@@ -52,11 +53,17 @@ export class I18nService implements II18n {
       return l;
    }
 
+   get localeShortName() {
+      return this.locale.shortName;
+   }
+
    set localeShortName(sn: string) {
       const localeIdx = this.locales.findIndex(l => l.shortName === sn);
       if (localeIdx >= 0) {
          this._currentLocaleIndex = localeIdx;
          this._onLocaleChangeEvent.next(this.locale);
+      } else {
+         throw new Error(`Locale ${sn} could not be found.`);
       }
    }
 
@@ -64,11 +71,9 @@ export class I18nService implements II18n {
       if (!s) {
          return '';
       }
-      if (this.locale.translates) {
-         const res = this.locale.translates[s];
-         return res ? res : s;
-      }
-      return s;
+
+      const res = this.locale.translates[s];
+      return res ? res : s;
    }
 
    get localeName(): string { return this.locale.name; }
