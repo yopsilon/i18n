@@ -1,6 +1,6 @@
 {
   "name": "@yopsilon/i18n",
-  "version": "0.9.3",
+  "version": "0.9.4",
   "description": "Simple i18n lib for the Yopsilon components",
   "author": {
     "name": "Aleksei Melnikov",
